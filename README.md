@@ -10,7 +10,7 @@ Code source complet du projet (Python 3.8.5, Django 4.0.1, Bootstrap)
 
 Commandes à saisir pour l'installation :
 
-Sur Windows : 
+Sur Windows/Linux/Mac : 
 
 1. git clone https://github.com/Cisco1964/OC_Application-web.git
 2. cd litreview
@@ -19,17 +19,3 @@ Sur Windows :
 5. python manage.py migrate
 6. python manage.py runserver
 7. Puis saisissez l'URL dans un navigateur : http://localhost:8000/login/
-
-
-
-
-
-Sur Linux/Mac : 
-$ git clone https://github.com/Cisco1964/OC_Application-web.git
-$ cd litreview
-$ pip3 install -r requirements.txt 
-$ python manage.py makemigrations
-$ python manage.py migrate
-$ python manage.py runserver
-$ Puis saisissez l'URL dans un navigateur : http://localhost:8000/login/
-

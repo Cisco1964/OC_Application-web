@@ -6,6 +6,13 @@ Création d'une application web avec le framework Django, permettant de publier 
 
 Code source complet du projet (Python 3.8.5, Django 4.0.1, Bootstrap)
 
+# Pré-requis 
+Création d'un environnement virtuel ENV  
+python -m venv ENV
+activation de l'environnement virtuel : source ENV/bin/activate  
+installation des packages : voir le fichier requirements.txt
+
+
 # Installation de l'application en local
 
 Commandes à saisir pour l'installation :

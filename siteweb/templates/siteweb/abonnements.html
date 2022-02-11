@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<br>
+<h2 class="text-center">Suivre d'autres utilisateurs</h2>
+
+<form method="post">
+    {% csrf_token %}
+	<div class="text-center">
+        <label for="search_user">Nom utilisateur : </label>
+		<input id="search_user" type="text" name="search_user" maxlength="20" required>
+		<button type="submit" class="btn btn-primary">Envoyer</button>
+	</div>
+</form>
+
+{% if message %}
+    <div class="card">
+        <div class="card-body  text-center ">
+            <p>{{invalid_name}}</p>
+            <p>{{message}}</p>
+        </div>
+    </div>
+{%else%}  
+    {% for searched_user in searched_users %}
+   
+        <div class="card">
+
+            <div style ="display: inline-block;" class="card-body text-center ">
+                <p>{{searched_user.username}}</p>
+                <a href="{% url 'abonner' pk=searched_user.id  %}"><button type="button" class="btn btn-primary btn-sm">S'abonner</button></a>
+                <a href="{% url 'abonnements'%}"><button type="button" class="btn btn-primary btn-sm">Annuler</button></a>
+            </div>
+        </div>
+    
+    
+    {% endfor %}
+{% endif %}
+
+<h2 class="text-center">Abonnements</h2>
+{% for elem in  abonnement %}
+<div class="card">
+    <div class="card-body text-center ">
+        {{elem}}
+        <a href="{% url 'desabonner' pk=elem.pk  %}"><button type="button" class="btn btn-primary btn-sm">Se désabonner</button></a>
+    </div>
+</div>
+{% endfor %}
+
+<h2 class="text-center">Abonnés</h2>
+{% for elem in  abonne %}
+<div class="card">
+    <div class="card-body text-center ">
+        {{elem}}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

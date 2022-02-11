@@ -1,0 +1,98 @@
+{% extends 'main.html' %}
+{% block content %}
+<h2 class="text-center">Posts</h2>
+<div class="list-group">    
+    {% if posts%}
+    {% for post in posts %}
+        {% if post.ticket %}
+        <div class = "list-group-item">
+            
+            <p class = "text-left disabled">
+                Vous avez publié une critique
+            </p>
+            <p class = "text-right disabled">
+                {{post.time_created}} 
+            </p>
+            <p class = "list-group-item-text">
+                {{post.headline}} 
+            </p>
+            <p class = "list-group-item-text">
+                Note :
+                {{post.rating}}
+                / 5
+            </p>
+            <p class = "list-group-item-text">
+                {{post.body}} 
+            </p>   
+            <p class = "list-group-item-text">
+                **********************************************************
+            </p>
+            <p class = "list-group-item-text">
+                <strong>Ticket - </strong>{{post.ticket.user}}
+            </p>
+            <p class = "list-group-item-text">
+                <strong>Titre : </strong>{{post.ticket.title}}
+            </p>
+                
+            <p class = "list-group-item-text">
+                {{post.ticket.description}} 
+            </p>
+
+            {% if post.ticket.image %}
+            <img src="{{post.ticket.image.url}}" alt="" width="180px" height="250px">
+            {% endif %}
+         
+            
+           <div style ="display: inline-block;" class="col align-self-end">
+                <a style ="margin-right: 20px" href="{% url 'supprimer-critique' pk=post.pk %}"><button type="button" class="btn btn-primary btn-sm float-right">Supprimer</button></a>
+                <a style ="margin-right: 20px" href="{% url 'modifier-critique' pk=post.pk %}" ><button type="button" class="btn btn-primary btn-sm float-right">Modifier</button></a>  
+            </div>  
+
+        </div>   
+        
+        {% else %}
+            <div class = "list-group-item">
+                <p class = "text-left disabled">
+                    Vous avez publié un ticket</p>
+                </p>
+    
+                <p class = "text-right disabled">
+                    {{post.time_created}} 
+                </p>
+
+                <p class = "list-group-item-text">
+                <strong>Titre : </strong>{{post.title}}
+                </p>
+                
+                <p class = "list-group-item-text">
+                    {{post.description}} 
+                </p>
+
+                {% if post.image %}
+                <img src="{{post.image.url}}" alt="" width="180px" height="250px">
+                {% endif %}
+
+                <div style ="display: inline-block" class="col align-self-end">
+                    <a style ="margin: 20px" href="{% url 'supprimer-ticket' pk=post.pk %}"><button type="button" class="btn btn-primary btn-sm float-right">Supprimer</button></a>
+                    <a style ="margin: 20px" href="{% url 'modifier-ticket' pk=post.pk %}" ><button type="button" class="btn btn-primary btn-sm float-right">Modifier</button></a>  
+
+                </div> 
+            </div>
+        
+            {% endif %}    
+            <br>
+    
+    {% endfor %}
+{% else %}
+    <h2 class="text-center">AUCUN TICKET ET AUCUNE CRITIQUE</h2>
+    {% endif %}
+</div>
+  
+
+
+
+
+
+
+
+{% endblock content %}

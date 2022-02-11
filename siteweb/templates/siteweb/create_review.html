@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+         <div class="col-lg-12">
+             <h2 class="text-center">Créer une critique</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form }}
+                <br>
+                {{r_form}}
+            
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary float-right">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

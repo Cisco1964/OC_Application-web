@@ -19,10 +19,10 @@ Commandes à saisir pour l'installation :
 
 Sur Windows/Linux/Mac :
 
-1. git clone <https://github.com/Cisco1964/OC_Application-web.git>
-2. cd litreview
-3. pip install -r requirements.txt
-4. python manage.py makemigrations
-5. python manage.py migrate
-6. python manage.py runserver
-7. Puis saisissez l'URL dans un navigateur : <http://localhost:8000/login/>
+* git clone <https://github.com/Cisco1964/OC_Application-web.git>
+* cd litreview
+* pip install -r requirements.txt
+* python manage.py makemigrations
+* python manage.py migrate
+* python manage.py runserver
+* Puis saisissez l'URL dans un navigateur : <http://localhost:8000/login/>

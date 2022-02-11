@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+         <div class="col-lg-12">
+             <h2 class="text-center">Suivre d'autres utilisateurs</h2>
+             <br>
+            <form action="" method="POST" class="form-inline">
+            {% csrf_token %}
+            <input class="form-control mr-xl-2" value="" name="search_user" type="search"
+            placeholder="Rechercher un utilisateur" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+            
+            </form>
+        </div>
+    </div>
+</div>
+
+{% for searched_user in searched_users %}
+<div class="card">
+    <div class="card-body">
+        <p>{{searched_user}}</p>
+        {% if searched_user in my_follows_str %}
+            <a href="{% url 'desabonnement' searched_user %}">Unfollow</a>
+        {% else %}
+            <a href="{% url 'follow_user' searched_user %}" class="btn btn-sm btn-info">Follow</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% for follow in my_follows %}
+<div class="card">
+    <div class="card-body">
+        {{follow}}
+        <form method="POST">
+            <a class="btn btn-sm btn-danger" href="{% url 'unfollow' follow.id %}">Unfollow</a>
+        </form>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

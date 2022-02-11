@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+         <div class="col-lg-12">
+             <h2 class="text-center">Modifier une critique</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary float-right">Modifier</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

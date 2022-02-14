@@ -29,6 +29,11 @@ Sur Windows/Linux/Mac :
 
 # Jeu de test
 
-* Utilisateur : momo  mot de passe : Momo2022
-* Utilisateur : sadio  mot de passe : Sadio2022
-* Utilisateur : sardine  mot de passe : Sardine2022
+* Utilisateur : momo  
+* Mot de passe : Momo2022
+
+* Utilisateur : sadio  
+* Mot de passe : Sadio2022
+
+* Utilisateur : sardine  
+* Mot de passe : Sardine2022

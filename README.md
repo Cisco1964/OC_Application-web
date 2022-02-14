@@ -25,4 +25,10 @@ Sur Windows/Linux/Mac :
 * python manage.py makemigrations
 * python manage.py migrate
 * python manage.py runserver
-* Puis saisissez l'URL dans un navigateur : <http://localhost:8000/login/>
+* Puis saisissez l'URL dans un navigateur : <http://localhost:8000>
+
+# Jeu de test
+
+* Utilisateur : momo  mot de passe : Momo2022
+* Utilisateur : sadio  mot de passe : Sadio2022
+* Utilisateur : sardine  mot de passe : Sardine2022
